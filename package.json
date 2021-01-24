@@ -39,7 +39,8 @@
     "request": "^2.88.2",
     "uuid": "^8.3.0",
     "winston": "^3.3.3",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "artillery": "^1.6.0",
