@@ -8,14 +8,9 @@ module.exports = function (app) {
     app.use(express.urlencoded({
         extended: true
     }));
-    app.use(express.static('public'));
 
     //Routes
     apiRoutes(app);
-
-    //View config
-    app.set('view engine', 'pug');
-    app.set('views', './views');
 
     //Error middleware
     app.use(error);
