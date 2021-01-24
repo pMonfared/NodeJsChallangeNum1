@@ -6,7 +6,7 @@ mode = process.env.NODE_ENV || 'dev';
 const config = require('config').get(mode);
 
 module.exports = function () {
-    const dbHost = config.database.host;
+    const dbHost = process.env.DB_HOST || config.database.host;
     console.log('connectionString:', dbHost);
     let dbOptions;
     dbOptions = {
