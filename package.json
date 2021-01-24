@@ -2,12 +2,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "dev": "cross-env NODE_ENV=dev nodemon --inspect=5001 --config nodemon.js src/server.js",
-    "staging": "cross-env NODE_ENV=staging nodemon --inspect=5001 --config nodemon.js src/server.js",
-    "production": "cross-env NODE_ENV=production nodemon --inspect=5001 --config nodemon.js src/server.js",
-    "test": "cross-env NODE_ENV=test jest --setupFiles dotenv/config --watchAll --runInBand --detectOpenHandles --verbose --coverage",
-    "test-stress": "artillery run tests/stress/test-stress.yml"
+    "staging": "cross-env NODE_ENV=staging  nodemon --inspect=5001 --config nodemon.js src/server.js",
+    "production": "cross-env NODE_ENV=production  nodemon --inspect=5001 --config nodemon.js src/server.js"
   },
   "engines": {
     "node": "12.16.1",
@@ -39,7 +36,8 @@
     "nodemailer": "^6.4.6",
     "pug": "^2.0.4",
     "request": "^2.88.2",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "artillery": "^1.6.0",
@@ -54,7 +52,6 @@
     "jest": "^25.3.0",
     "jest-cli": "^25.3.0",
     "nodemon": "^2.0.3",
-    "supertest": "^4.0.2",
-    "winston": "^3.3.3"
+    "supertest": "^4.0.2"
   }
 }

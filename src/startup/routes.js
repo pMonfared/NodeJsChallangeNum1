@@ -1,5 +1,5 @@
 ﻿const express = require('express');
-const error = require('../middleware/error');
+const error = require('../middlewares/error');
 const apiRoutes = require('../routes/api.routes');
 
 module.exports = function (app) {

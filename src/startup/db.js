@@ -1,9 +1,12 @@
 ﻿const winston = require('winston');
 const mongoose = require('mongoose');
-const config = require('config');
+// if NODE_ENV value not define then dev value will be assign 
+mode = process.env.NODE_ENV || 'dev';
+// mode can be access anywhere in the project
+const config = require('config').get(mode);
 
 module.exports = function () {
-    const dbHost = `${config.get('db.host')}`;
+    const dbHost = config.database.host;
     console.log('connectionString:', dbHost);
     let dbOptions;
     dbOptions = {

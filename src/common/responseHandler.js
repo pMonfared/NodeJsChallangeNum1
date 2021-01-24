@@ -13,9 +13,9 @@ function findErrorMessage(status) {
  * @param {string} successMessage - Success response message
  * @param {any} data - Success response custom data
  */
-let successResponse = (code = 0, successMessage = "success", data) => {
+let successResponse = (data, code = 0, successMessage = "success") => {
     return {
-        code: 0,
+        code,
         msg: successMessage,
         data
     }
@@ -27,9 +27,9 @@ let successResponse = (code = 0, successMessage = "success", data) => {
  * @param {string} msg - BadRequest response message
  * @param {any} data - Error response custom data
  */
-let badRequestResponse = (code = 0, msg, data) => {
+let badRequestResponse = (code = 400, msg, data) => {
     return {
-        code: 0,
+        code,
         msg,
         data
     }
