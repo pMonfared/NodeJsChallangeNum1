@@ -1,5 +1,5 @@
 ﻿{
-  "dev": {
+  "development": {
     "name": "Project Name - Dev Mode",
     "port": 4100,
     "mode": "development",

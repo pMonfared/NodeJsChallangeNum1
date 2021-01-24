@@ -2,8 +2,8 @@
 const reqResponse = require('../../common/responseHandler');
 
 const schema = Joi.object({
-    startDate: Joi.date(),
-    endDate: Joi.date(),
+    startDate: Joi.date().iso(),
+    endDate: Joi.date().iso(),
     minCount: Joi.number(),
     maxCount: Joi.number()
 });

@@ -1,7 +1,7 @@
 ﻿const winston = require('winston');
 const mongoose = require('mongoose');
 // if NODE_ENV value not define then dev value will be assign 
-mode = process.env.NODE_ENV || 'dev';
+mode = process.env.NODE_ENV || 'development';
 // mode can be access anywhere in the project
 const config = require('config').get(mode);
 
@@ -12,8 +12,10 @@ module.exports = function () {
     dbOptions = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useFindAndModify: false
+        useFindAndModify: true
     };
-    mongoose.connect(dbHost, dbOptions)
-        .then(()=> winston.info(`Connected to ${dbHost}...`));
+    mongoose.connect(dbHost, dbOptions).then(
+        () => winston.info(`Connected to ${dbHost}...`),
+        err => winston.error(err)
+    );
 };

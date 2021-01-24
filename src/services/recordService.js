@@ -8,60 +8,24 @@ module.exports = {
         //condition: calculate totalCount sum of count array numbers
         conditions.push({ $addFields: { totalCount: { $sum: "$counts" } }});
 
-        //condition: filter on totalCount when minCount and maxCount filled
-        if(minCount && maxCount){
-            conditions.push({ $match : { "totalCount" : { $gt: minCount , $lt: maxCount } } })
-        }
-        else
-        {
-            //condition: filter on totalCount when only minCount filled
-            if(minCount){
-                conditions.push({ $match : { "totalCount" : { $gt: minCount } } })
-            }
-            //condition: filter on totalCount when only maxCount filled
-            if(maxCount){
-                conditions.push({ $match : { "totalCount" : { $lt: maxCount } } })
-            }
-        }
 
-        
-        //condition: filter on createdAt when startDate and endDate filled as Date format
-        if(startDate && endDate){
-            conditions.push({
-                $match :
-                    {
-                        'createdAt': {
-                            $gt: new Date(startDate),
-                            $lt: new Date(endDate)
-                        }
-                    }
-            })
-        }
-        else
-        {
-            //condition: filter on createdAt when only startDate filled as Date format
-            if(startDate){
-               conditions.push({
-                   $match :
-                       {
-                           'createdAt': {
-                               $gt: new Date(startDate)
-                           }
-                       }
-               })
-            }
-            //condition: filter on createdAt when only endDate filled as Date format
-            if(endDate){
-                conditions.push({
-                    $match :
-                        {
-                            'createdAt': {
-                                $lt: new Date(endDate)
-                            }
-                        }
-                })
-            }
-        }
+        //condition: filter on totalCount when minCount and/or maxCount filled
+        let minMax = {};
+        if(minCount)
+            minMax.$gt = minCount;
+        if(maxCount)
+            minMax.$lt = maxCount;
+        if(minMax)
+            conditions.push({ $match : { "totalCount" : minMax } });
+
+        //condition: filter on createdAt when startDate and/or endDate filled as Date format
+        let startDtEndDt = {};
+        if(startDate)
+            startDtEndDt.$gt = new Date(startDate);
+        if(endDate)
+            startDtEndDt.$lt = new Date(endDate);
+        if(startDtEndDt)
+            conditions.push({ $match : { "createdAt" : startDtEndDt } });
 
         //select fields as need as you want
         conditions.push({

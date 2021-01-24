@@ -1,5 +1,5 @@
 ﻿
-const whitelist = ['http://localhost:8000','https://englectrocuteweb.herokuapp.com'];
+const whitelist = ['http://localhost:5000','https://nodejschallengepm.herokuapp.com'];
 
 module.exports = function (req, callback) {
     let corsOptions;
