@@ -4,7 +4,7 @@ const allRecordFilterValidation = require('../../validations/routes/allRecordFil
 const recordController = require('../../controllers/recordController');
 
 
-router.post('/list', [allRecordFilterValidation], recordController.listRecord);
+router.post('/', [allRecordFilterValidation], recordController.listRecord);
 
 
 module.exports = router;
