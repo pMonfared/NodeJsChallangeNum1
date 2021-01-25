@@ -8,15 +8,13 @@ module.exports = {
             let body = req.body;
             let params = req.params;
             let query = req.query;
-
+            
             const data = await recordService.getAllByFilter(body.startDate,body.endDate, body.minCount, body.maxCount);
 
             return res.status(200).send(reqResponse.successResponse(data));
         }
         catch(error){
-            console.error(error);
-            return res.status(502).send(reqResponse.errorResponse(502))
+            return res.status(500).send(reqResponse.errorResponse(10002))
         }
     },
-    
 };
