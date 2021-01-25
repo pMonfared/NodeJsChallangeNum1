@@ -10,21 +10,21 @@ module.exports = {
 
 
         //condition: filter on totalCount when minCount and/or maxCount filled
-        let minMax;
+        let minMax = {};
         if(minCount)
             minMax.$gt = minCount;
         if(maxCount)
             minMax.$lt = maxCount;
-        if(minMax)
+        if(Object.entries(minMax).length !== 0)
             conditions.push({ $match : { "totalCount" : minMax } });
 
         //condition: filter on createdAt when startDate and/or endDate filled as Date format
-        let startDtEndDt;
+        let startDtEndDt = {};
         if(startDate)
             startDtEndDt.$gt = new Date(startDate);
         if(endDate)
             startDtEndDt.$lt = new Date(endDate);
-        if(startDtEndDt)
+        if(Object.entries(minMax).length !== 0)
             conditions.push({ $match : { "createdAt" : startDtEndDt } });
 
         //select fields as need as you want
