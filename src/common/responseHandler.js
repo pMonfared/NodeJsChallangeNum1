@@ -3,8 +3,8 @@
 
 const getErrorStatus = require('../constants/ErrorData');
 
-function findErrorMessage(status) {
-    return getErrorStatus.ERROR_STATUS_ARRAY.find(v => v.status === status) || { error: 'There must be an error' };
+function findErrorMessage(code) {
+    return getErrorStatus.ERROR_STATUS_ARRAY.find(v => v.code === code) || { error: 'There must be an error' };
 }
 
 /**

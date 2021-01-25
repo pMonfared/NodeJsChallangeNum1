@@ -1,12 +1,7 @@
-﻿const Joi = require('@hapi/joi');
+﻿
 const reqResponse = require('../../common/responseHandler');
 
-const schema = Joi.object({
-    startDate: Joi.date().iso(),
-    endDate: Joi.date().iso(),
-    minCount: Joi.number(),
-    maxCount: Joi.number()
-});
+const schema = require("../schema/record.post.validation.schema"); 
 
 module.exports = function (req, res, next) {
     const { error } = schema.validate(req.body);

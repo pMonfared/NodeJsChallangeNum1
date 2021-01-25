@@ -3,9 +3,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "cross-env NODE_ENV=dev nodemon --inspect=5001 --config nodemon.js src/server.js",
-    "staging": "cross-env NODE_ENV=staging  nodemon --inspect=5001 --config nodemon.js src/server.js",
-    "production": "cross-env NODE_ENV=production  nodemon --inspect=5001 --config nodemon.js src/server.js"
+    "test": "cross-env NODE_ENV=development jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose --coverage",
+    "dev": "cross-env NODE_ENV=development nodemon --inspect=5001 --config nodemon.json src/server.js",
+    "staging": "cross-env NODE_ENV=staging  nodemon --inspect=5001 --config nodemon.json src/server.js",
+    "production": "cross-env NODE_ENV=production  nodemon --inspect=5001 --config nodemon.json src/server.js"
   },
   "engines": {
     "node": "12.16.1",

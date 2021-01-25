@@ -8,7 +8,7 @@
     "serverUrlWebUrlLink": "",
     "database": {
       "multipleStatements": true,
-      "host": "",
+      "host": "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true",
       "user": "",
       "password": "",
       "database": ""
