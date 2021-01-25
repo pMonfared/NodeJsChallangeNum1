@@ -10,7 +10,7 @@ module.exports = {
 
 
         //condition: filter on totalCount when minCount and/or maxCount filled
-        let minMax = {};
+        let minMax;
         if(minCount)
             minMax.$gt = minCount;
         if(maxCount)
@@ -19,7 +19,7 @@ module.exports = {
             conditions.push({ $match : { "totalCount" : minMax } });
 
         //condition: filter on createdAt when startDate and/or endDate filled as Date format
-        let startDtEndDt = {};
+        let startDtEndDt;
         if(startDate)
             startDtEndDt.$gt = new Date(startDate);
         if(endDate)
