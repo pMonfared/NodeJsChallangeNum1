@@ -8,7 +8,7 @@
     "serverUrlWebUrlLink": "localhost:4200/",
     "database": {
       "multipleStatements": true,
-      "host": "mongodb://localhost:27017/recordDev_db",
+      "host": "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true",
       "user": "",
       "password": "",
       "database": ""
