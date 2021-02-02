@@ -3,10 +3,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "cross-env NODE_ENV=development jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose --coverage",
-    "dev": "cross-env NODE_ENV=development nodemon --inspect=5001 --config nodemon.json src/server.js",
-    "staging": "cross-env NODE_ENV=staging  nodemon --inspect=5001 --config nodemon.json src/server.js",
-    "production": "cross-env NODE_ENV=production  nodemon --inspect=5001 --config nodemon.json src/server.js"
+    "win-test": "cross-env NODE_ENV=development jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose --coverage",
+    "win-dev": "cross-env NODE_ENV=development nodemon --inspect=5001 --config nodemon.json src/server.js",
+    "win-staging": "cross-env NODE_ENV=staging  nodemon --inspect=5001 --config nodemon.json src/server.js",
+    "win-production": "cross-env NODE_ENV=production  nodemon --inspect=5001 --config nodemon.json src/server.js",
+    "test": "NODE_ENV=development jest --setupFiles nodemon --config nodemon.json --watchAll --runInBand --detectOpenHandles --verbose --coverage"
   },
   "engines": {
     "node": "12.16.1",
