@@ -1,0 +1,23 @@
+﻿{
+  "test": {
+    "name": "Project Name - Test Mode",
+    "port": 4600,
+    "mode": "development",
+    "protocol": "http",
+    "serverUrl": "localhost",
+    "serverUrlWebUrlLink": "localhost:4200/",
+    "database": {
+      "multipleStatements": true,
+      "host": "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true",
+      "user": "",
+      "password": "",
+      "database": ""
+    },
+    "email": {
+      "host": "",
+      "port": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}
